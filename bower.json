@@ -1,0 +1,22 @@
+{
+  "name": "backbone-todo-spa",
+  "version": "0.0.0",
+  "authors": [
+    "Sardor Isakov <sisardor@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "underscore": "~1.7.0",
+    "backbone": "~1.1.2"
+  }
+}

@@ -10,6 +10,9 @@ var app = (function() {
         todos: null,
         init: function() {
             this.content = $("#content");
+            this.todos = new api.collections.ToDos();
+            ViewsFactory.menu();
+            return this;
         },
         changeContent: function(el) {
             this.content.empty().append(el);
@@ -20,8 +23,30 @@ var app = (function() {
             return this;
         }
     };
-    var ViewsFactory = {};
-    var Router = Backbone.Router.extend({});
+    var ViewsFactory = {
+        menu: function() {
+            if(!this.menuView) {
+                this.menuView = new api.views.menu({ 
+                    el: $("#menu")
+                });
+            }
+            return this.menuView;
+        }       
+    };
+    var Router = Backbone.Router.extend({
+        routes: {
+            "archive": "archive",
+            "new": "newToDo",
+            "edit/:index": "editToDo",
+            "delete/:index": "delteToDo",
+            "": "list"
+        },
+        list: function(archive) {},
+        archive: function() {},
+        newToDo: function() {},
+        editToDo: function(index) {},
+        delteToDo: function(index) {}
+    });
     api.router = new Router();
  
     return api;
